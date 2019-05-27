@@ -1,5 +1,12 @@
 .App {
+  display: flex;
   text-align: center;
+  background-color: #fffdf5;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+
+
 }
 
 .App-logo {
@@ -9,19 +16,32 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #121212;
 }
 
 .App-link {
   color: #61dafb;
 }
+
+.Cards{
+   display: flex;
+  flex-direction: column;
+}
+
+.card{
+  min-width: 400px;
+  margin:20px;
+}
+.media{
+  height: 140px;
+}
+
 
 @keyframes App-logo-spin {
   from {

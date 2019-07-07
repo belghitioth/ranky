@@ -1,7 +1,7 @@
 .App {
   display: flex;
   text-align: center;
-  background-color: #fffdf5;
+  background-color: #252020;
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #121212;
+  color: #ffffff;
 }
 
 .App-link {

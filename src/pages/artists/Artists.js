@@ -11,34 +11,35 @@ import Button from "@material-ui/core/Button";
 import * as firebase from 'firebase/app';
 import 'firebase/database';
 
-import "./Venues.css";
+import "./Artists.css";
 
-class Venues extends Component {
+class Artists extends Component {
 
     constructor(  ) {
         super();
         this.state= {
-            number_of_bars: 10,
-            bars: [],
+            number_of_artists: 10,
+            artists: [],
         };
     }
 
     componentDidMount() {
         let rootRef = firebase.database().ref();
-        let barsRef= rootRef.child('bars');
+        let artistsRef= rootRef.child('artists');
 
-        barsRef.on('value',snap =>{
-            let bars =snap.val();
+        artistsRef.on('value',snap =>{
+            let artists =snap.val();
             let newState = [];
-            for (let bar in bars) {
+            for (let artist in artists) {
                 newState.push({
-                    name: bars[bar].name,
-                    description: bars[bar].description,
-                    image: bars[bar].image,
+                    name: artists[artist].name,
+                    description: artists[artist].description,
+                    price: artists[artist].price,
+                    image: artists[artist].image,
                 });
             }
             this.setState({
-                bars: newState
+                artists: newState
             });
         })
     };
@@ -49,20 +50,23 @@ class Venues extends Component {
             <div className="Venues">
                 <HeadNavbar></HeadNavbar>
                 <div className="Cards">
-                    {this.state.bars.map(( bar ) => (
+                    {this.state.artists.map(( artist ) => (
                         <Card className="card">
                             <CardActionArea>
                                 <CardMedia
                                     className="media"
-                                    image={bar.image}
-                                    title={bar.name}
+                                    image={artist.image}
+                                    title={artist.name}
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {bar.name}
+                                        {artist.name}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        {bar.description}
+                                        {artist.genre}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {artist.price} /hour
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -82,4 +86,4 @@ class Venues extends Component {
     }
 }
 
-export default Venues;
+export default Artists;

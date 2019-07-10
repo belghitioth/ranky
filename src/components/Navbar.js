@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import FormControl from "react-bootstrap/es/FormControl";
+import {Link} from "react-router-dom";
 
 
 
@@ -16,21 +17,21 @@ class HeadNavbar extends Component{
 
         return (
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="/">Buzzlink</Navbar.Brand>
+                <Navbar.Brand href="">Buzzlink</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/venues">Venues</Nav.Link>
-                        <Nav.Link href="/artists">Artists</Nav.Link>
+                        <Nav.Link><Link to="/venues">Venues</Link></Nav.Link>
+                        <Nav.Link><Link to="/artists">Artists</Link></Nav.Link>
                         <NavDropdown title="About Us" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="">Buzzing feeds</NavDropdown.Item>
+                            <NavDropdown.Item to="">Buzzing feeds</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="">Team</NavDropdown.Item>
+                            <NavDropdown.Item to="">Team</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav className="mr-sm-1">
-                        <Nav.Link href="">Login</Nav.Link>
-                        <Nav.Link href="">Sign Up</Nav.Link>
+                        <Nav.Link><Link to="">Login</Link></Nav.Link>
+                        <Nav.Link><Link to="">Sign Up</Link></Nav.Link>
                     </Nav>
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -45,3 +46,4 @@ class HeadNavbar extends Component{
 }
 
 export default HeadNavbar;
+

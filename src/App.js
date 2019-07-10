@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/database';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Venues from "./pages/venues/Venues";
 
 import "./App.css";
+import Artists from "./pages/artists/Artists";
 
 var firebaseConfig = {
     apiKey: "AIzaSyAPThA_o-fCWAFWbTKmxAgxLwIOUrV3XDg",
@@ -28,7 +29,7 @@ class App extends Component{
             <Router>
                 <Route exact path="/" component={Home} />
                 <Route path="/venues" component={Venues} />
-                <Route path="/artists" component={Venues} />
+                <Route path="/artists" component={Artists} />
             </Router>
         );
     }

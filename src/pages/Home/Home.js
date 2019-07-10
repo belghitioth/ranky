@@ -3,6 +3,7 @@ import React,{Component} from "react";
 
 import "./Home.css";
 import Button from "react-bootstrap/Button";
+import {Link} from "react-router-dom";
 
 class Home extends Component{
 
@@ -16,8 +17,8 @@ class Home extends Component{
                 <header className="App-header">
                     <h1>BuzzLink - Book an artist</h1>
                     <div className="buttons">
-                    <Button className ="button" variant="info">BOOK AN ARTIST</Button>
-                    <Button className ="button" variant="info">BOOK A VENUE</Button>
+                    <Button className ="button" variant="info"><Link to="/artists">BOOK AN ARTIST</Link></Button>
+                    <Button className ="button" variant="info"><Link to="/venues">BOOK A VENUE</Link></Button>
                     </div>
                 </header>
 

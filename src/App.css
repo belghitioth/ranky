@@ -6,3 +6,19 @@ html, body {
 #root {
   height: 100%;
 }
+
+
+a {
+  color: grey;
+}
+a:hover {
+  color: grey;
+  text-decoration: none;
+}
+button a {
+  color: white;
+}
+button a:hover {
+  color: white;
+  text-decoration: none;
+}

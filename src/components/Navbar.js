@@ -16,7 +16,7 @@ class HeadNavbar extends Component{
     render() {
 
         return (
-            <Navbar bg="light" expand="lg">
+            <Navbar className="navbar-form navbar-fixed-top" bg="light" expand="lg">
                 <Navbar.Brand><Link to="">Buzzlink</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
